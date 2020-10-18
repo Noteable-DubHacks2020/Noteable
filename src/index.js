@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
