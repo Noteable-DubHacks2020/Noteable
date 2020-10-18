@@ -17,23 +17,27 @@ export const ImageUpload = () => {
   const handleSubmit = (files, allFiles) => {
     // console.log(files);
     // console.log(files.map(f => f.meta))
-    const url = files[0].meta.previewUrl
-    callVisionApi(url);
+    allFiles.forEach(f => {
+      const fileName = f.meta.name.split('.').slice(0, -1).join('.');
+      const url = f.meta.previewUrl;
+      callVisionApi(fileName, url);
+    })
     allFiles.forEach(f => f.remove())
   }
 
   return (
     <div>
       <Dropzone
-      styles={{
-        dropzone: { width: 400, height: 200, backgroundColor: 'white' },
-        dropzoneActive: { borderColor: 'green' },
-      }}
-      getUploadParams={getUploadParams}
-      onChangeStatus={handleChangeStatus}
-      onSubmit={handleSubmit}
-      accept="image/*,audio/*,video/*" classNames="dropzone"
-    />
+        styles={{
+          dropzone: { width: 400, height: 200, backgroundColor: 'white' },
+          dropzoneActive: { borderColor: 'green' }
+        }}
+        submitButtonContent="Download"
+        getUploadParams={getUploadParams}
+        onChangeStatus={handleChangeStatus}
+        onSubmit={handleSubmit}
+        accept="image/*,audio/*,video/*" classNames="dropzone"
+      />
     </div>
   )
 }
