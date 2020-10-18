@@ -21,7 +21,8 @@ export const ImageUpload = () => {
       <Dropzone
       styles={{
         dropzone: { width: 400, height: 200, backgroundColor: 'white' },
-        dropzoneActive: { borderColor: 'green' },
+        dropzoneActive: { borderColor: '#2082E8' },
+
       }}
       getUploadParams={getUploadParams}
       onChangeStatus={handleChangeStatus}
@@ -31,3 +32,4 @@ export const ImageUpload = () => {
     </div>
   )
 }
+
