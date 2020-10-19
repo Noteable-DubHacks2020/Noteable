@@ -8,6 +8,17 @@ function App() {
       <div className="content">
         <Header/>
         <ImageUpload/>
+          <footer style={{
+          position: 'fixed',
+          left: '0',
+          bottom: '0',
+          paddingBottom: '10px',
+          width: '100%',
+          textAlign: 'center',
+          fontSize:'12px'
+        }}>Made with ❤️ by Henry, Yash, and Justin ©️ 2020
+        <a href="https://github.com/Noteable-DubHacks2020/Noteable" style={{marginLeft:'8px', color:'#2082E8'}}>Github</a>
+        </footer>
       </div>
     </div>
   );
